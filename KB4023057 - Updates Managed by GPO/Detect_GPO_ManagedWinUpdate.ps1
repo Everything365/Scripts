@@ -13,16 +13,16 @@ if (Test-Path $gpoRegistryPath) {
     #     $value = Get-ItemProperty -Path $mdmRegistryPath -Name $keyName -ErrorAction SilentlyContinue
     #     if ($value.$keyName -eq $expectedValue) {
     #         Write-Output "FeatureUpdatePausePeriodInDays is 23."
-    #         exit 0
+    #         exit 1
     #     } else {
     #         Write-Output "FeatureUpdatePausePeriodInDays is not 23."
-    #         exit 1
+    #         exit 0
     #     }
     # }
 
-    exit 0
+    exit 1
 }
 else {
     Write-Output "Registry key does not exist."
-    exit 1
+    exit 0
 }
